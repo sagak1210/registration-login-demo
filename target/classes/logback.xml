@@ -7,7 +7,7 @@
 			</pattern>
 		</encoder>
 	</appender>
-	<root level="info"> <!-- change to debug to get more logs -->
+	<root level="info"> <!-- change to debug to get more logs in console -->
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>
