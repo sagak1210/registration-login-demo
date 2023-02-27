@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,14 @@ public class AuthController extends Baselog {
     public AuthController(UserService userService) {
         this.userService = userService;
     }
+    
+    @DeleteMapping
+    public String deleteuser() {
+		return "login";
+    	
+    }
+    
+    
 
     @GetMapping("index")
     public String home(){
@@ -70,5 +79,12 @@ public class AuthController extends Baselog {
         model.addAttribute("users", users);
         logger.info("Users page");
         return "users";
+    }
+    
+ // handler method to handle user registration request
+    @GetMapping("/update")
+    public String showUpdateForm(Model model){
+       
+        return "update";
     }
 }

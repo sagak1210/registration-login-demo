@@ -47,6 +47,20 @@ public class UserServiceImpl extends Baselog implements UserService {
 		;
 		userRepository.save(user);
 	}
+	
+	@Override
+	public void updateUser(UserDto userDto) {
+		User updateuser =  new User();
+		
+		userRepository.delete(updateuser);
+		
+		
+	}
+	
+	@Override
+	public void deleteUser(UserDto userDto) {
+		
+	}
 
 	@Override
 	public User findByEmail(String email) {
